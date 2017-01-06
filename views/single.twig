@@ -1,18 +1,23 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <!-- Provided by views/single.twig -->
-    <div class="content-wrapper">
-        <article class="{{ post.class }}" id="post-{{post.ID}}">
-            <h2 class="article-title">{{post.title}}</h2>
-            <div class="article-author">{{__('Authored by', 'gesso') }}
-                <a href="{{post.author.link}}">{{post.author.display_name}}</a>
-            </div>
-            <div class="article-body">
-                {{post.content}}
-            </div>
-        </article>
-        {{comment_form}}
-    </div>
-    <!-- /content-wrapper -->
+    <!-- START: template provided by views/single.twig  -->
+    <article class="article article--{{ post.type }} {{ post.class }}" id="post-{{post.ID}}">
+
+        <h2 class="article__title">{{post.title}}</h2>
+
+        <div class="article__author">{{__('Authored by', 'gesso') }}
+            <a href="{{post.author.link}}">{{post.author.display_name}}</a>
+        </div>
+
+        <div class="article__content">
+            {{post.content}}
+        </div>
+
+        <div class="article__comments">
+            {{comment_form}}
+        </div>
+    </article>
+
+    <!-- END: template provided by views/single.twig  -->
 {% endblock %}
