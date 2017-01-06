@@ -2,16 +2,21 @@
 
 {% block content %}
 
-  <!-- Provided by views/search.twig -->
-  <h1>{{ __('Search results for term: ', 'gesso') }} {{ request.get.s }}</h1>
-  <section class="section section__search-results">
-    {% for post in posts %}
-      <div class="result">
-        <a href="{{ post.link }}">{{post.title}}</a>
-      </div>
-    {% endfor %}
-  </section>
+    <!-- START: template provided by views/search.twig  -->
+    <section class="section section--search-results">
+        <h1 class="section__title">{{ __('Search results for term: ', 'gesso') }}
+            {{ request.get.s }}</h1>
 
-  {% include 'templates/pagination.twig' %}
+        <div class="section__result-loop">
+            {% for post in posts %}
+                <div class="section__result">
+                    <a href="{{ post.link }}">{{post.title}}</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include 'templates/pagination.twig' %}
+    </section>
+    <!-- END: template provided by views/search.twig  -->
 
 {% endblock %}
