@@ -1,12 +1,13 @@
+<!-- START: template provided by templates/pagination.twig  -->
 <div class="pagination">
     {% if pagination.prev %}
-        <div class="pane pane--first">
+        <div class="pagination__pane pagination__pane--first">
             <a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
         </div>
     {% endif %}
 
-    <div class="pane pane--second">
-        <ul class="pages">
+    <div class="pagination__pane pagination__pane--second">
+        <ul class="pagination__pages">
             {% for page in pagination.pages %}
                 <li>
                     {% if page.link %}
@@ -20,8 +21,9 @@
     </div>
 
     {% if pagination.next %}
-        <div class="pane pane--third">
+        <div class="pagination__pane pagination__pane--third">
             <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
         </div>
     {% endif %}
 </div>
+<!-- END: template provided by templates/pagination.twig  -->

@@ -247,7 +247,7 @@ function gesso_link_pages() {
 	$gesso_links = array(
 		'before'	  => '<nav class="page-links" role="navigation"><h2 class="page-links-title element-invisible">' . __( 'Pages:', 'gesso' ) . '</h2>',
 		'after'	   => '</nav>',
-		'link_before' => '<span class="pager__item">',
+		'link_before' => '<span class="pagination__item">',
 		'link_after'  => '</span>',
 	);
 	wp_link_pages( $gesso_links );
