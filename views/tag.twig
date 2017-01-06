@@ -2,19 +2,24 @@
 
 {% block content %}
 
-    <!-- Provided by views/tag.twig -->
-    <h2 class="page__title">
-        {{ __('Tag Archive: ' , 'gesso') }}
-        {{ wp_title }}</h2>
+    <!-- START: template provided by views/tag.twig  -->
 
-    <section class="page__content">
-        {% for post in posts %}
-            <div class="result">
-                <a href="{{post.link}}">{{post.title}}</a>
-            </div>
-        {% endfor %}
+    <section class="section section--tag-archive">
+        <h2 class="section__title">
+            {{ __('Tag Archive: ' , 'gesso') }}
+            {{ wp_title }}</h2>
+
+        <div class="section__results-loop">
+            {% for post in posts %}
+                <div class="section__result">
+                    <a href="{{post.link}}">{{post.title}}</a>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include 'templates/pagination.twig' %}
     </section>
 
-    {% include 'templates/pagination.twig' %}
+    <!-- END: template provided by views/tag.twig  -->
 
 {% endblock %}
