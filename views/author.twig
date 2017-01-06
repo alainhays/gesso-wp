@@ -2,31 +2,32 @@
 
 {% block content %}
 
-    <!-- Provided by views/author.twig -->
-    <section>
+    <!-- START: template provided by views/author.twig  -->
+    <section class="section section--author">
         {% if posts %}
 
-            <h1 class="page-title">{{ title }}</h1>
+            <h1 class="section__title">{{ title }}</h1>
 
-            <div class="author-meta">
+            <div class="section__meta">
                 {% if author.avatar %}
-                    <div class="author-meta__image"><img src="{{ author.avatar.abs_url }}" alt="author avater"></div>
+                    <div class="section__meta-image"><img src="{{ author.avatar.abs_url }}" alt="author avater"></div>
                 {% endif %}
 
                 {% if author.description %}
-                    <div class="author-meta__description">{{ author.description }}</div>
+                    <div class="section__meta-description">{{ author.description }}</div>
                 {% endif %}
             </div>
 
-            {% for post in posts %}
-                <article class="author-article">
-                    <h2 class="author-article__title">
-                        <a href="{{ post.link }}">{{ post.post_title }}</a>
-                    </h2>
-                    <span class="author-article__date">{{ post.date }}</span>
-                    <div class="author-article__comments"></div>
-                </article>
-            {% endfor %}
+            <div class="section__article-loop">
+                {% for post in posts %}
+                    <article class="article article--{{ post.type }} {{ post.class}}" id="post-{{ post.id }}">
+                        <h2 class="article__title">
+                            <a href="{{ post.link }}">{{ post.post_title }}</a>
+                        </h2>
+                        <span class="article__date">{{ post.date }}</span>
+                    </article>
+                {% endfor %}
+            </div>
 
             {% include 'templates/pagination.twig' %}
 
@@ -35,5 +36,5 @@
         {% endif %}
 
     </section>
-
+    <!-- END: template provided by views/author.twig  -->
 {% endblock %}
