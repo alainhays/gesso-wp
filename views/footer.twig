@@ -1,11 +1,15 @@
-<!-- Provided by views/footer.twig -->
+<!-- START: template provided by views/footer.twig  -->
 <footer class="footer" role="contentinfo">
-	<div class="footer-inner layout-constrain">
+    <div class="footer__inner layout-constrain">
 
-		{{ function('get_sidebar', 'footer') }}
+        {{ function('get_sidebar', 'footer') }}
 
-		<p class="copyright">
-			&copy; {{ current_year }} Copyright {{ site.name }}.
-		</p>
-	</div>
+        <p class="copyright">
+            &copy;
+            {{ current_year }}
+            Copyright
+            {{ site.name }}.
+        </p>
+    </div>
 </footer>
+<!-- END: template provided by views/footer.twig  -->
